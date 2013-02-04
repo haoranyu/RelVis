@@ -1,0 +1,100 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;font-family:Arial}ul,ol{list-style:none;}img{border:none;}a{text-decoration:none;}a:hover{text-decoration:underline;}.nofloat{float:none;}.maincenter{width:984px;margin:0 auto;}.clear{clear:both;}.iclear{clear:both;display:block;overflow:hidden;padding:0;margin:0;width:0;height:0;}
+.clear{clear:both;}.invisible-clear{clear:both;display:block;overflow:hidden;padding:0;margin:0;width:0;height:0;}.g-hide{display:hidden;}
+body{
+overflow:hidden;
+}
+#left{
+float:left;
+}
+#system{
+background:url(../img/sy_bg.jpg) repeat-y right #E4E3DF;
+overflow:hidden;
+}
+
+/* Timebar part*/
+#timeBar{
+height:39px;
+}
+#breakline{
+position:absolute;
+height:25px;
+}
+#sc{
+background:url(../img/s_bg.jpg);
+height:14px;
+}
+#Block{
+background:url(../img/ss_bg.jpg);
+margin-left:1px;
+position:relative;
+height:12px;
+line-height:12px;
+font-size:6px;
+border:1px solid #000;
+border-top:none;
+text-align:center;
+}
+
+/* Right part*/
+#right{
+float:left;
+width:210px;
+border-left:1px solid #A19D9E;
+font-family:Arial;
+}
+.sidehead{
+padding-top:1px;
+color:#DE4B3B;
+height:39px;
+width:105px;
+float:left;
+border-bottom:1px solid #E5E5E5;
+}
+.sidehead span{
+display:block;
+margin:10px 0 0 12px;
+}
+.selectall{
+padding-top:1px;
+color:#DE4B3B;
+height:39px;
+width:105px;
+float:left;
+border-bottom:1px solid #E5E5E5;
+}
+.selectall span{
+display:block;
+margin:5px 0;
+height:29px;
+line-height:30px;
+text-align:center;
+width:105px;
+background:url(../img/selectall.jpg) no-repeat center bottom;
+color:#333;
+font-size:12px;
+}
+.list {
+overflow-y:scroll;
+overflow-x:hidden;
+}
+.list li{
+width:1000px;
+overflow:hidden;
+height:37px;
+color:#333;
+line-height:37px;
+font-size:12px;
+border-bottom:1px solid #E5E5E5;
+}
+.list li a{
+overflow:hidden;
+}
+.list .checkbox{
+display:block;
+float:left;
+background-image:url(../img/checkbox.jpg);
+background-position:0 14.5px;
+height:15px;
+width:14px;
+margin:11px 9px 0 9px; 
+}
