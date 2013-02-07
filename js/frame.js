@@ -7,6 +7,7 @@ $("#system").width($("#left").width()).height($(window).height()-38);
 $("#right").height($(window).height());
 $(".list").height($("#right").height()-26);
 $("#breakline").width($("#timeBar").width());
+$("#pVis").height($(window).height()-38);
 }
 
 function sumArray(arr,st,en){
@@ -110,28 +111,62 @@ for(i=0;i<infoArray.user.length;i++){
 	$(".list ul").prepend('<li><a class="checkbox" check="true" uid="'+(i+1)+'" send="" receive=""></a>'+infoArray.user[i].email+'</li>');
 }
 
+// persistant labels
+$(".showlabels span").click(function() {
+	var contactsHtml = $("#contacts ul li");
+	if ($(this).attr('check') == 'false') {
+		$(this).attr('check', 'true').css('background-position', 'left bottom');
+
+		for (var pos = 0; pos < contactsHtml.size(); pos++) {
+			if (contactsHtml.find(".checkbox").attr('check') == 'true') {
+				pjs.highlightContact(pos);
+			}
+		}
+
+	} else {
+		$(this).attr('check', 'false').css('background-position', 'left top');
+		
+		for (var pos = 0; pos < contactsHtml.size(); pos++) {
+			pjs.unHighlightContact(pos);
+		}
+	}
+});
+
 //List and checkbox
 $(".list li").mouseover(function(){
 	$(this).css('background',"#FFFFCD");
+
+	var position = $("#contacts ul li").index(this);
+	if (position > -1) {
+		pjs.highlightContact(position);
+	}
 });
 
 $(".list li").mouseout(function(){
 	$(this).css('background',"#FFF");
+	
+	var position = $("#contacts ul li").index(this);
+	if (position > -1 && $(".showlabels span").attr('check') == 'false') {
+		pjs.unHighlightContact(position);
+	}
 });
 
 $(".checkbox").click(function(){
 	if($(this).attr("check")==="false"){
 		$(this).attr("check","true").css("background-position","0 -30px");
+		if ($("#contacts ul li").size() == $("#contacts ul li a[check='true']").size()) {
+			$(".selectall span").attr("check","true").css("background-position","left bottom");
+		}
 	}
 	else{
 		$(this).attr("check","false").css("background-position","0 0");
-		$(".selectall span").attr("check","false").css("background-position","top");
+		$(".selectall span").attr("check","false").css("background-position","left top");
 	}
 });
 
 $(".selectall span").click(function(){
 	if($(this).attr("check")==="false"){
-		$(this).attr("check","true").css("background-position","bottom");
+		$(this).attr("check","true").css("background-position","left bottom");
 		$(".checkbox").attr("check","true").css("background-position","0 -30px");
 	}
 	else{

@@ -9,6 +9,11 @@ float:left;
 #system{
 background:url(../img/sy_bg.jpg) repeat-y right #E4E3DF;
 overflow:hidden;
+text-align:center;
+}
+#system canvas{
+outline:none;
+border:none;
 }
 
 /* Timebar part*/
@@ -46,7 +51,7 @@ font-family:Arial;
 padding-top:1px;
 color:#DE4B3B;
 height:39px;
-width:105px;
+width:100%;
 float:left;
 border-bottom:1px solid #E5E5E5;
 }
@@ -54,24 +59,33 @@ border-bottom:1px solid #E5E5E5;
 display:block;
 margin:10px 0 0 12px;
 }
-.selectall{
+.setting-checkbox-outer {
 padding-top:1px;
-color:#DE4B3B;
 height:39px;
-width:105px;
-float:left;
 border-bottom:1px solid #E5E5E5;
 }
-.selectall span{
+.setting-checkbox {
+color:#DE4B3B;
+height:37px;
+width:80px;
+float:left;
+margin-left:20px;
+}
+.setting-checkbox span{
 display:block;
 margin:5px 0;
 height:29px;
 line-height:30px;
-text-align:center;
-width:105px;
-background:url(../img/selectall.jpg) no-repeat center bottom;
+text-align:left;
+width:155px;
+padding-left: 30px;
+background:url(../img/selectall.jpg) no-repeat left bottom;
 color:#333;
 font-size:12px;
+cursor: pointer;
+}
+.showlabels span {
+    background-position: left top;
 }
 .list {
 overflow-y:scroll;
