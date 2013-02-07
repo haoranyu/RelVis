@@ -28,7 +28,7 @@ PVector center;
 int buffer = 50;
 
 int radius = 640;
-int padding = 200;
+int padding = 600;
 
 // js inputs
 // MUST BE SET FIRST
@@ -54,7 +54,7 @@ void setup() {
   center = new PVector(0, 0);
   
   // objects
-  color yourColor = color(250, 5, 5);
+  color yourColor = color(5, 5, 250);
   you = new Contact(
     /* id = */ -1,
     /* stroke color = */ yourColor,

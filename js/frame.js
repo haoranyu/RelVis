@@ -7,8 +7,14 @@ $("#system").width($("#left").width()).height($(window).height()-38);
 $("#right").height($(window).height());
 $(".list").height($("#right").height()-26);
 $("#breakline").width($("#timeBar").width());
-$("#pVis").height($(window).height()-38);
+$("#pVis").width($("#system").width());
 }
+var map = new SpryMap({id : "pVis",
+                             height: ($(window).height()-38),
+                             width: 2000,
+                             startX: 200,
+                             startY: 600,
+                             cssClass: "mappy"});
 
 function sumArray(arr,st,en){
 	var i,max,sum=0;
