@@ -130,23 +130,26 @@ $contact_re = array_keys($receive_con);
 $contact_se = array_keys($sent_con);
 $contact = array_unique(array_merge($contact_re,$contact_se));
 $infoArray = '{"user":[';
+arsort($contact,SORT_STRING);
 foreach($contact as &$con){
-	if(isset($sent_con[$con])){
-		$sent = $sent_con[$con];
+	if($con!=''){
+		if(isset($sent_con[$con])){
+			$sent = $sent_con[$con];
+		}
+		else{
+			$sent = getAlllZero($day_length);
+		}
+		if(isset($receive_con[$con])){
+			$receive = $receive_con[$con];
+		}
+		else{
+			$receive = getAlllZero($day_length);
+		}
+		if($infoArray!='{"user":['){
+			$infoArray .= ",";
+		}
+		$infoArray = $infoArray.'{"email":"'.$con.'","sent":['.$sent.'],"receive":['.$receive.']}';
 	}
-	else{
-		$sent = getAlllZero($day_length);
-	}
-	if(isset($receive_con[$con])){
-		$receive = $receive_con[$con];
-	}
-	else{
-		$receive = getAlllZero($day_length);
-	}
-	if($infoArray!='{"user":['){
-		$infoArray .= ",";
-	}
-	$infoArray = $infoArray.'{"email":"'.$con.'","sent":['.$sent.'],"receive":['.$receive.']}';
 }
 $infoArray .= ']}';
 include("template.php")
